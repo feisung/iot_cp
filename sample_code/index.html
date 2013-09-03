@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery.min.js"></script>
+<script>
+state = 'off'
+function postToLED()
+{
+	if (state === 'off'){
+		$.post("on");
+		state = 'on';
+		document.getElementById("state").innerHTML="On";
+	} else {
+		$.post("off");
+		state = 'off';
+	        document.getElementById("state").innerHTML="Off";
+	}
+}
+</script>
+</head>
+<body>
+
+<h1>The Very simple IoT Example</h1>
+
+<p> <button id="state" onclick="postToLED()" type="button">Click Me!</button> </p>
+
+
+</body>
+</html>
+
